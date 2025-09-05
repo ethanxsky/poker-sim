@@ -15,7 +15,7 @@ This project is a work in progress. The current implementation focuses on the co
 -   **State Machine**: A finite-state machine is used to manage the flow of the game, including player turns and betting rounds.
 -   **Network Communication**: Leverages TCP sockets for reliable, bi-directional communication between the server and all clients.
 -   **Fault Tolerance**: Designed to handle and recover from graceful client disconnections.
--   
+
 ---
 
 ### How to Build and Run
@@ -25,18 +25,25 @@ This project requires a C compiler and the standard C library.
     ```bash
     git clone [your-repo-link]
     ```
-2.  Navigate to the project directory and build the server and client executables using `make`.
+2. Compile the code:
     ```bash
-    cd poker-sim
-    make
+    make server.poker_server
     ```
-3.  Run the server:
+3.  Navigate to the project directory and build the server and client executables using `make`.
     ```bash
-    ./build/server.poker_server [optional_seed]
+    make tui.client
+
+    make client.automated
     ```
-4.  Run a client:
+4.  Run the server: <br>
+   '#' is a random number used to randomize the deck of cards.
     ```bash
-    ./build/client.poker_client [server_ip] [server_port]
+    ./build/server.poker_server #
+    ```
+6.  Run a client: <br>
+   '#' is the plyaer number between 0 and 5.
+    ```bash
+    ./build/client.poker_client #
     ```
 
 ---
